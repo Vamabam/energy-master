@@ -1,0 +1,8 @@
+{
+  "name": "EnergyMaster",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite",
+  "id": "958d93e2"
+}
