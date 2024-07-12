@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-energymaster-dev-4970a-authRole",
+      "UnauthRoleArn": "arn:aws:iam::992382432332:role/amplify-energymaster-dev-4970a-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::992382432332:role/amplify-energymaster-dev-4970a-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-energymaster-dev-4970a-deployment",
+      "UnauthRoleName": "amplify-energymaster-dev-4970a-unauthRole",
+      "StackName": "amplify-energymaster-dev-4970a",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:992382432332:stack/amplify-energymaster-dev-4970a/05a4e4e0-3a97-11ef-9885-064409a2c1f3",
+      "AmplifyAppId": "d390t66284d51a"
+    },
+    "categories": {
+      "api": {
+        "energymaster": {}
+      }
+    }
+  }
+}
