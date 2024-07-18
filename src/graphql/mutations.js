@@ -1,51 +1,57 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createPwrRecord = /* GraphQL */ `
-  mutation CreatePwrRecord(
-    $input: CreatePwrRecordInput!
-    $condition: ModelPwrRecordConditionInput
+export const createMonitoringRecord = /* GraphQL */ `
+  mutation CreateMonitoringRecord(
+    $input: CreateMonitoringRecordInput!
+    $condition: ModelMonitoringRecordConditionInput
   ) {
-    createPwrRecord(input: $input, condition: $condition) {
+    createMonitoringRecord(input: $input, condition: $condition) {
       id
       device_id
       Irms
       Vrms
       Power
+      dataTime
+      plugStatus
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const updatePwrRecord = /* GraphQL */ `
-  mutation UpdatePwrRecord(
-    $input: UpdatePwrRecordInput!
-    $condition: ModelPwrRecordConditionInput
+export const updateMonitoringRecord = /* GraphQL */ `
+  mutation UpdateMonitoringRecord(
+    $input: UpdateMonitoringRecordInput!
+    $condition: ModelMonitoringRecordConditionInput
   ) {
-    updatePwrRecord(input: $input, condition: $condition) {
+    updateMonitoringRecord(input: $input, condition: $condition) {
       id
       device_id
       Irms
       Vrms
       Power
+      dataTime
+      plugStatus
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const deletePwrRecord = /* GraphQL */ `
-  mutation DeletePwrRecord(
-    $input: DeletePwrRecordInput!
-    $condition: ModelPwrRecordConditionInput
+export const deleteMonitoringRecord = /* GraphQL */ `
+  mutation DeleteMonitoringRecord(
+    $input: DeleteMonitoringRecordInput!
+    $condition: ModelMonitoringRecordConditionInput
   ) {
-    deletePwrRecord(input: $input, condition: $condition) {
+    deleteMonitoringRecord(input: $input, condition: $condition) {
       id
       device_id
       Irms
       Vrms
       Power
+      dataTime
+      plugStatus
       createdAt
       updatedAt
       __typename

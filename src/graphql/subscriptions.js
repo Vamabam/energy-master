@@ -1,48 +1,54 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreatePwrRecord = /* GraphQL */ `
-  subscription OnCreatePwrRecord(
-    $filter: ModelSubscriptionPwrRecordFilterInput
+export const onCreateMonitoringRecord = /* GraphQL */ `
+  subscription OnCreateMonitoringRecord(
+    $filter: ModelSubscriptionMonitoringRecordFilterInput
   ) {
-    onCreatePwrRecord(filter: $filter) {
+    onCreateMonitoringRecord(filter: $filter) {
       id
       device_id
       Irms
       Vrms
       Power
+      dataTime
+      plugStatus
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onUpdatePwrRecord = /* GraphQL */ `
-  subscription OnUpdatePwrRecord(
-    $filter: ModelSubscriptionPwrRecordFilterInput
+export const onUpdateMonitoringRecord = /* GraphQL */ `
+  subscription OnUpdateMonitoringRecord(
+    $filter: ModelSubscriptionMonitoringRecordFilterInput
   ) {
-    onUpdatePwrRecord(filter: $filter) {
+    onUpdateMonitoringRecord(filter: $filter) {
       id
       device_id
       Irms
       Vrms
       Power
+      dataTime
+      plugStatus
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onDeletePwrRecord = /* GraphQL */ `
-  subscription OnDeletePwrRecord(
-    $filter: ModelSubscriptionPwrRecordFilterInput
+export const onDeleteMonitoringRecord = /* GraphQL */ `
+  subscription OnDeleteMonitoringRecord(
+    $filter: ModelSubscriptionMonitoringRecordFilterInput
   ) {
-    onDeletePwrRecord(filter: $filter) {
+    onDeleteMonitoringRecord(filter: $filter) {
       id
       device_id
       Irms
       Vrms
       Power
+      dataTime
+      plugStatus
       createdAt
       updatedAt
       __typename
