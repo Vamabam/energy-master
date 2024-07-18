@@ -6,21 +6,21 @@ import createChart from "./Graphs";
 
 const Tab1: React.FC = () => {
   const powerChart = useRef<HTMLCanvasElement | null>(null); // Correctly typed useRef
-  const chartInstance = useRef<Chart<'bar'> | null>(null); // Ref to hold the Chart instance
+  const chartInstance = useRef<Chart<'line'> | null>(null); // Ref to hold the Chart instance
   createChart(powerChart, chartInstance);
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonTitle>Power Usage</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonListHeader color="light">Vertical Bar Chart</IonListHeader>
+        <IonListHeader color="light">Device Power Data</IonListHeader>
         <IonCard>
           <IonCardHeader>
-            <IonCardSubtitle>Number of Viewers per season for</IonCardSubtitle>
-            <IonCardTitle>Game of Thrones</IonCardTitle>
+            <IonCardSubtitle>Power Usage (Watts)</IonCardSubtitle>
+            <IonCardTitle>Smart Plug</IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
           <canvas ref={powerChart}></canvas>
@@ -28,7 +28,7 @@ const Tab1: React.FC = () => {
         </IonCard>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
+            <IonTitle size="large">Power Usage</IonTitle>
           </IonToolbar>
         </IonHeader>
       </IonContent>
@@ -37,34 +37,3 @@ const Tab1: React.FC = () => {
 };
 
 export default Tab1;
-/*
- // Current Chart
-  const CurrentChart = useRef<HTMLCanvasElement | null>(null); // Correctly typed useRef
-  useEffect(() => {
-    if (CurrentChart.current) {
-      const ctx = CurrentChart.current.getContext('2d');
-      if (ctx) {
-        new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8'],
-            datasets: [{
-              label: 'Viewers in millions',
-              data: [, 3.8, 5, 6.9, 6.9, 7.5, 10, 17],
-              backgroundColor: 'rgb(38, 194, 129)', // array should have same number of elements as number of dataset
-              borderColor: 'rgb(38, 194, 129)', // array should have same number of elements as number of dataset
-              borderWidth: 1
-            }]
-          },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-      }
-    }
-  }, []); // Empty dependency array ensures useEffect runs only once
-*/
