@@ -47,6 +47,12 @@ import './theme/variables.css';
 
 setupIonicReact();
 
+import { Amplify } from 'aws-amplify';
+import { generateClient } from 'aws-amplify/api';
+import config from './amplifyconfiguration.json';
+Amplify.configure(config); // MIHT NO NEED HERE
+const client = generateClient();
+
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
