@@ -40,9 +40,9 @@ function createChart(powerChart: React.MutableRefObject<HTMLCanvasElement | null
     const fetchData = async () => {
       try {
         var { label: pluglabels, value: values } = await fetchDevicePowerData("Plug1");
-        console.log("Plug Data:", pluglabels, values);
+        //console.log("Plug Data:", pluglabels, values);
         const { label: sensor1Labels, value: sensor1Values } = await fetchDevicePowerData("CurrentSensor1");
-        console.log("Sensor 1 Data:", sensor1Labels, sensor1Values);
+        //console.log("Sensor 1 Data:", sensor1Labels, sensor1Values);
         const { label: sensor2Labels, value: sensor2Values } = await fetchDevicePowerData("CurrentSensor2");
         //console.log("Sensor 2 Data:", sensor2Labels, sensor2Values);
         if (powerChart.current) {
