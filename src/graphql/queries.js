@@ -45,18 +45,6 @@ export const listMonitoringRecords = /* GraphQL */ `
     }
   }
 `;
-// MAY NEED TO INCREAS LIMIT SO NEW DATAPOINTS
-//export const listPwrData = /* GraphQL */` 
- /* query listpwr {
-    listMonitoringRecords (limit: 1000) {
-      items {
-        dataTime
-        Power
-      }
-    }
-  }
-`;
-*/
 export const listPwrData = /* GraphQL */ `
   query ListMonitoringRecords(
     $filter: ModelMonitoringRecordFilterInput

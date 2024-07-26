@@ -1,6 +1,13 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const publishMessageToIot = /* GraphQL */ `
+  mutation publishMessageToIot(
+  $topicName: String!, 
+  $message: String!) {
+    publishMessageToIot(topicName: $topicName, message: $message)
+  }
+`;
 export const createMonitoringRecord = /* GraphQL */ `
   mutation CreateMonitoringRecord(
     $input: CreateMonitoringRecordInput!
