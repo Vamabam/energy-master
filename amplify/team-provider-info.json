@@ -14,6 +14,12 @@
     "categories": {
       "api": {
         "energymaster": {}
+      },
+      "function": {
+        "pubOnOff": {
+          "deploymentBucketName": "amplify-energymaster-dev-4970a-deployment",
+          "s3Key": "amplify-builds/pubOnOff-4d6f59614138374d4769-build.zip"
+        }
       }
     }
   }

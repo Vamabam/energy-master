@@ -12,3 +12,6 @@ type monitoringRecord @model {
     plugStatus: Int
 }
 
+type Mutation {
+  publishMessageToIot(topicName: String!, message: String!): String @function(name: "pubOnOff-dev")
+}
