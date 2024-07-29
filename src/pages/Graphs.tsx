@@ -5,7 +5,7 @@ import * as queries from '../graphql/queries'
 import { generateClient } from 'aws-amplify/api';
 import { Amplify } from 'aws-amplify';
 import config from '../amplifyconfiguration.json';
-
+import { mostRecent } from './Tab1'
 Amplify.configure(config);
 const client = generateClient();
 
@@ -35,16 +35,25 @@ async function fetchDevicePowerData(device_name:string) {
   return {label, value}
 }
 
-function createChart(powerChart: React.MutableRefObject<HTMLCanvasElement | null>, chartInstance: React.MutableRefObject<Chart<'line'> | null>) {
+
+
+function createChart(powerChart: React.MutableRefObject<HTMLCanvasElement | null>, chartInstance: React.MutableRefObject<Chart<'line'> | null>,
+  device_name:string, recentData:mostRecent) 
+{
   useEffect(() => {
     const fetchData = async () => {
       try {
-        var { label: pluglabels, value: values } = await fetchDevicePowerData("Plug1");
+        var { label: labels, value: values } = await fetchDevicePowerData(device_name);
+        recentData.recentData = values.at(-1); // Gets last value in array
+        console.log(recentData.recentData);
+        /*
         //console.log("Plug Data:", pluglabels, values);
         const { label: sensor1Labels, value: sensor1Values } = await fetchDevicePowerData("CurrentSensor1");
         //console.log("Sensor 1 Data:", sensor1Labels, sensor1Values);
         const { label: sensor2Labels, value: sensor2Values } = await fetchDevicePowerData("CurrentSensor2");
+        const { label: sensor3Labels, value: sensor3Values } = await fetchDevicePowerData("CurrentSensor3");
         //console.log("Sensor 2 Data:", sensor2Labels, sensor2Values);
+        */
         if (powerChart.current) {
           // Destroy existing chart if it exists
           if (chartInstance.current) {
@@ -55,26 +64,14 @@ function createChart(powerChart: React.MutableRefObject<HTMLCanvasElement | null
             type: 'line',
             data: {
               //plugLabels,
-              labels: sensor1Labels,
+              labels: labels,
               datasets: [
               {
-                label: 'Plug',
-                data: values,//plugValues,
+                label: 'Power (mW)',
+                data: values,
                 borderColor: 'rgba(75, 192, 192, 1)',
                 fill: false,
-              },
-              {
-                label: 'Current Sensor 1',
-                data: sensor1Values,
-                borderColor: 'rgba(255, 99, 132, 1)',
-                fill: false,
-              },
-              {
-                label: 'Current Sensor 2',
-                data: sensor2Values,
-                borderColor: 'rgba(54, 162, 235, 1)',
-                fill: false,
-              }
+              }           
             ],
           },
             options: {
@@ -104,7 +101,7 @@ function createChart(powerChart: React.MutableRefObject<HTMLCanvasElement | null
         chartInstance.current.destroy();
       }
     };
-  }, []); // Empty dependency array ensures useEffect runs only once on initial mount
+  },  [deviceName, setRecentData, powerChartRef]); // Empty dependency array ensures useEffect runs only once on initial mount
 }
 
 export default createChart;
