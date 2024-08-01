@@ -57,6 +57,9 @@ export const listPwrData = /* GraphQL */ `
       nextToken: $nextToken
     ) {
       items {
+        plugStatus
+        Vrms
+        Irms
         device_id
         Power
         dataTime
